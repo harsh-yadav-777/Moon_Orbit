@@ -1,0 +1,95 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Rotating Around Earth</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .solar-system {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Earth container - this rotates to make moon orbit */
+        .earth-orbit {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            animation: rotate 6s linear infinite;
+        }
+
+        /* Earth itself */
+        .earth {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: #4a90e2;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+
+        /* Moon orbit path */
+        .moon-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+        }
+
+        /* Moon */
+        .moon {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        /* Keyframes for animations */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="solar-system">
+        <div class="earth-orbit">
+            <div class="earth"></div>
+            <div class="moon-orbit">
+                <div class="moon"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
